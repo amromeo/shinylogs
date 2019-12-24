@@ -129,6 +129,7 @@ parse_lastInput <- function(x, shinysession, name) {
 #' @example examples/track_usage-json.R
 #' @example examples/track_usage-console.R
 track_usage <- function(storage_mode,
+                        app_name,
                         exclude_input_regex = NULL,
                         exclude_input_id = NULL,
                         on_unload = FALSE,
@@ -139,7 +140,7 @@ track_usage <- function(storage_mode,
 
   stopifnot(inherits(storage_mode, "shinylogs.storage_mode"))
 
-  app_name <- basename(getwd())
+  #app_name <- basename(getwd())
   if (is.null(get_user))
     get_user <- get_user_
   if (!is.function(get_user))
